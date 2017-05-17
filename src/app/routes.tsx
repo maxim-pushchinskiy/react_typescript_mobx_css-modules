@@ -3,10 +3,11 @@ import { Route, Router, IndexRoute, Redirect } from 'react-router';
 import AppComponent from "./components/AppComponent";
 import customHistory from "./utils/browser-history";
 
-export default (
+const routes =
     <Router history={ customHistory }>
         <Route path="/" component={ AppComponent }>
 
         </Route>
-    </Router>
-);
+    </Router>;
+
+export default routes;

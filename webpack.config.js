@@ -19,6 +19,7 @@ const SCSS = [
 			localIdentName: '[name]__[local]___[hash:base64:5]'
 		}
 	},
+	'postcss-loader',
 	'sass-loader'
 ];
 
@@ -124,7 +125,21 @@ const webpackConfig = {
 if(DEBUG) {
 	webpackConfig.entry.app.unshift('react-hot-loader/patch');
 		webpackConfig.plugins.push(
-			new WebpackNotifierPlugin({alwaysNotify: true})
+			new WebpackNotifierPlugin({alwaysNotify: true}),
+			new webpack.LoaderOptionsPlugin({
+				options: {
+					postcss: {
+						options: {
+							config: ({file, options, env}) => ({
+								parser: file.extname === '.sss' ? 'sugarss' : false,
+								plugins: {
+									'autoprefixer': env == 'production' ? options.autoprefixer : false
+								}
+							})
+						}
+					}
+				}
+			})
 		);
 	} else {
 	webpackConfig.plugins.push(

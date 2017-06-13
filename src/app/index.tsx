@@ -3,7 +3,7 @@ import { render as ReactDomRender } from 'react-dom';
 import routes from './routes';
 import { AppContainer } from 'react-hot-loader';
 
-const root = document.getElementById('root');
+const root: HTMLElement = document.getElementById('root');
 
 if(__DEBUG__) {
     if(module.hot) {

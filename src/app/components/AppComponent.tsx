@@ -1,15 +1,14 @@
 import * as React from 'react';
 
-const styles = require('./appComponent.scss');
+const styles: any = require('./appComponent.scss');
 
-const AppComponent = () => {
-    console.log(styles);
+const AppComponent: () => JSX.Element = () => {
     return (
         <div className={styles.hello}>
             Hello world!
         </div>
 
-    )
+    );
 };
 
 export default AppComponent;

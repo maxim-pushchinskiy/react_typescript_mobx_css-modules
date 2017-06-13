@@ -49,6 +49,11 @@ const webpackConfig = {
 	module: {
 		rules: [
 			{
+				test: /\.tsx$/,
+				enforce: 'pre',
+				loader: 'tslint-loader'
+			},
+			{
 				test   : /\.tsx?$/,
 				use : DEBUG ? ['react-hot-loader/webpack', 'babel-loader', 'ts-loader'] : ['babel-loader', 'ts-loader'],
 				exclude: /(node_modules)/

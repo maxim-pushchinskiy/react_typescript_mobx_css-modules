@@ -1,0 +1,108 @@
+@import '../../../assets/styles/colors';
+
+.container {
+  padding: 0.5rem 0;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+
+.input {
+  display: flex;
+  align-items: baseline;
+  margin: 1rem 0;
+}
+
+.field {
+  line-height: 2;
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  color: $charcoal-grey;
+
+  min-width: 30rem;
+  padding: 0 1rem 0 1rem;
+
+  border: 1px solid #979797;
+  border-radius: 0.5rem;
+
+  &::placeholder {
+    color: $purpley-grey;
+  }
+}
+
+.label {
+  padding-right: 2rem;
+}
+
+.error {
+  border: 1px solid $red;
+}
+
+.checkbox {
+  padding: 1rem 0;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: $white;
+    text-align: left;
+
+    position: relative;
+    padding-left: 3rem;
+
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] + label:before {
+    content: "\00a0";
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+
+    font: 1.6rem/2rem sans-serif;
+
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 1rem 0 0;
+    padding:0;
+
+    background-color: #fff;
+    border: 1px solid $purpley-grey;
+    border-radius: 0.3rem;
+  }
+
+  input[type="checkbox"]:checked + label:before {
+    border: 1px solid #fff;
+    background-color: $greenish-teal;
+  }
+
+  input[type="checkbox"]:checked + label:after {
+    content: '\00a0';
+    position: absolute;
+    top: -0.2rem;
+    left: 0.7rem;
+
+    width: 0.5rem;
+    height: 1.2rem;
+
+    border: solid #fff;
+    border-width: 0 0.2rem 0.2rem 0;
+
+    transform: rotate(43deg);
+  }
+
+  input[type="checkbox"]:disabled + label:before {
+    border-color: $purpley-grey;
+    background-color: transparent;
+  }
+
+  input[type="checkbox"]:disabled + label {
+    color: $purpley-grey;
+  }
+}

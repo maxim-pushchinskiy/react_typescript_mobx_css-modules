@@ -1,7 +1,7 @@
 import { useRouterHistory } from 'react-router';
 import { extendObservable, IObservableValue, observable } from 'mobx';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
-import {History, HistoryQueries, Location} from 'history';
+import { History, HistoryQueries, Location } from 'history';
 
 type CustomHistory = History & HistoryQueries & {location: IObservableValue<Location>};
 

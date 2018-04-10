@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Route, Router } from 'react-router';
 import AppComponent from './components/AppComponent';
-import customHistory from './utils/browser-history';
+import createBrowserHistory from 'history/createBrowserHistory';
 
 const routes =
-    <Router history={ customHistory }>
+    <Router history={ createBrowserHistory() }>
         <Route path='/' component={ AppComponent }>
         </Route>
     </Router>;
